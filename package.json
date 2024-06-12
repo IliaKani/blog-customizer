@@ -1,0 +1,95 @@
+{
+	"name": "blog-customizer",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+		"@storybook/addon-essentials": "^7.6.10",
+		"@storybook/addon-interactions": "^7.6.10",
+		"@storybook/addon-links": "^7.6.10",
+		"@storybook/addon-onboarding": "^1.0.10",
+		"@storybook/addon-styling-webpack": "^0.0.6",
+		"@storybook/blocks": "^7.6.10",
+		"@storybook/react": "^7.6.10",
+		"@storybook/react-webpack5": "^7.6.10",
+		"@storybook/test": "^7.6.10",
+		"@svgr/webpack": "^8.0.1",
+		"@types/react": "^18.2.0",
+		"@types/react-dom": "^18.2.1",
+		"@typescript-eslint/eslint-plugin": "^5.59.11",
+		"@typescript-eslint/parser": "^5.59.11",
+		"autoprefixer": "^10.4.14",
+		"clean-webpack-plugin": "^4.0.0",
+		"commitizen": "^4.3.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^6.8.1",
+		"cssnano": "^6.0.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.42.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"html-webpack-plugin": "^5.5.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
+		"merge": "^2.1.1",
+		"mini-css-extract-plugin": "^2.7.6",
+		"postcss-loader": "^7.3.3",
+		"prettier": "^2.8.8",
+		"react-refresh": "^0.14.0",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.69.7",
+		"sass-loader": "^13.3.3",
+		"storybook": "^7.6.10",
+		"style-loader": "^3.3.3",
+		"stylelint": "^16.1.0",
+		"stylelint-config-standard-scss": "^13.0.0",
+		"stylelint-order": "^6.0.3",
+		"ts-loader": "^9.4.3",
+		"typescript": "^5.0.4",
+		"typescript-plugin-css-modules": "^5.0.1",
+		"url-loader": "^4.1.1",
+		"webpack": "^5.81.0",
+		"webpack-cli": "^5.0.2",
+		"webpack-dev-server": "^4.15.0"
+	},
+	"scripts": {
+		"build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.js --env env=prod",
+		"start": "webpack serve --config webpack/webpack.config.js --env env=dev",
+		"stylelint": "stylelint \"src/**/*.scss\"",
+		"stylelint:fix": "stylelint \"src/**/*.scss\" --fix",
+		"lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+		"format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path ./.prettierignore",
+		"test": "npm run stylelint:fix && npm run lint && npm run format",
+		"prepare": "husky install",
+		"commit": "npm run test && cz",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:storybook/recommended"
+		]
+	},
+	"dependencies": {
+		"clsx": "^2.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"lint-staged": {
+		"*.{css,scss}": "yarn stylelint:fix",
+		"*.{js,jsx,ts,tsx}": "yarn lint",
+		"*.{js,jsx,ts,tsx,json,css,scss,md}": "yarn format"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"homepage": "./"
+}

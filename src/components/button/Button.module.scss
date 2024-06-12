@@ -1,0 +1,19 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	border: 1px solid #000000;
+	cursor: pointer;
+}
+
+.button:active {
+	background: var(--gold, #ffc802);
+}
+
+.button:hover {
+	background: var(--gold, #ffc802);
+}
