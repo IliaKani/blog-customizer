@@ -1,6 +1,6 @@
 import { OptionType } from 'src/constants/articleProps';
-import { Text } from 'components/text';
-import { Option } from './Option';
+import { Text } from '../../components/text';
+import { Option } from '../radio-group/Option';
 
 import styles from './RadioGroup.module.scss';
 

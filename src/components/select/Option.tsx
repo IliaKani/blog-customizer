@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import type { MouseEventHandler } from 'react';
 import clsx from 'clsx';
 import { OptionType } from 'src/constants/articleProps';
-import { Text } from 'components/text';
+import { Text } from '../../components/text';
 import { isFontFamilyClass } from './helpers/isFontFamilyClass';
 import { useEnterOptionSubmit } from './hooks/useEnterOptionSubmit';
 
