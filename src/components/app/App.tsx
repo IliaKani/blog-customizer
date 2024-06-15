@@ -33,6 +33,7 @@ export const App = () => {
 
 	const resetSidebarState = () => {
 		setState(defaultArticleState);
+		setSideBarState(defaultArticleState)
 	}
 
 	const applySideBarState = (event: FormEvent) => {
@@ -41,7 +42,7 @@ export const App = () => {
 	}
 
 	return (
-		<div
+		<main
 			className = {styles.main}
 			style = {
 				{
@@ -59,10 +60,10 @@ export const App = () => {
 				backgroundColor = {changeBgColor}
 				contentWidth = {changeContainerWidth} 
 				resetButton = {resetSidebarState}
-				applyButton = {(event) => applySideBarState(event)}
+				applyButton = {applySideBarState}
 				sideBarState = {sideBarState}			
 			/>
 			<Article />
-		</div>
+		</main>
 	);
 };
