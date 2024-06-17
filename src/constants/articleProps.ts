@@ -35,55 +35,55 @@ export const fontFamilyOptions: OptionType[] & {
 
 export const fontColors: OptionType[] = [
 	{
-		title: 'Черный',
+		title: 'Black',
 		value: '#000000',
 		className: 'font-black',
 		optionClassName: 'option-black',
 	},
 	{
-		title: 'Белый',
+		title: 'White',
 		value: '#FFFFFF',
 		className: 'font-white',
 		optionClassName: 'option-white',
 	},
 	{
-		title: 'Серый',
+		title: 'Grey',
 		value: '#C4C4C4',
 		className: 'font-gray',
 		optionClassName: 'option-gray',
 	},
 	{
-		title: 'Розовый',
+		title: 'Pink',
 		value: '#FEAFE8',
 		className: 'font-pink',
 		optionClassName: 'option-pink',
 	},
 	{
-		title: 'Ярко-розовый',
+		title: 'Fuchsia',
 		value: '#FD24AF',
 		className: 'font-fuchsia',
 		optionClassName: 'option-fuchsia',
 	},
 	{
-		title: 'Жёлтый',
+		title: 'Yellow',
 		value: '#FFC802',
 		className: 'font-yellow',
 		optionClassName: 'option-yellow',
 	},
 	{
-		title: 'Зелёный',
+		title: 'Green',
 		value: '#80D994',
 		className: 'font-green',
 		optionClassName: 'option-green',
 	},
 	{
-		title: 'Голубой',
+		title: 'Blue',
 		value: '#6FC1FD',
 		className: 'font-blue',
 		optionClassName: 'option-blue',
 	},
 	{
-		title: 'Фиолетовый',
+		title: 'Purple',
 		value: '#5F0DEE',
 		className: 'font-purple',
 		optionClassName: 'option-purple',
@@ -92,55 +92,55 @@ export const fontColors: OptionType[] = [
 
 export const backgroundColors: OptionType[] = [
 	{
-		title: 'Белый',
+		title: 'White',
 		value: '#FFFFFF',
 		className: 'bg-white',
 		optionClassName: 'option-white',
 	},
 	{
-		title: 'Черный',
+		title: 'Black',
 		value: '#000000',
 		className: 'bg-black',
 		optionClassName: 'option-black',
 	},
 	{
-		title: 'Серый',
+		title: 'Grey',
 		value: '#C4C4C4',
 		className: 'bg-gray',
 		optionClassName: 'option-gray',
 	},
 	{
-		title: 'Розовый',
+		title: 'Pink',
 		value: '#FEAFE8',
 		className: 'bg-pink',
 		optionClassName: 'option-pink',
 	},
 	{
-		title: 'Ярко-розовый',
+		title: 'Fuchsia',
 		value: '#FD24AF',
 		className: 'bg-fuchsia',
 		optionClassName: 'option-fuchsia',
 	},
 	{
-		title: 'Жёлтый',
+		title: 'Yellow',
 		value: '#FFC802',
 		className: 'bg-yellow',
 		optionClassName: 'option-yellow',
 	},
 	{
-		title: 'Зелёный',
+		title: 'Green',
 		value: '#80D994',
 		className: 'bg-green',
 		optionClassName: 'option-green',
 	},
 	{
-		title: 'Голубой',
+		title: 'Blue',
 		value: '#6FC1FD',
 		className: 'bg-blue',
 		optionClassName: 'option-blue',
 	},
 	{
-		title: 'Фиолетовый',
+		title: 'Purple',
 		value: '#5F0DEE',
 		className: 'bg-purple',
 		optionClassName: 'option-purple',
@@ -149,13 +149,13 @@ export const backgroundColors: OptionType[] = [
 
 export const contentWidthArr: OptionType[] = [
 	{
-		title: 'Широкий',
+		title: 'Wide',
 		value: '1394px',
 		className: 'width-wide',
 		optionClassName: 'option-wide',
 	},
 	{
-		title: 'Узкий',
+		title: 'Narrow',
 		value: '948px',
 		className: 'width-narrow',
 		optionClassName: 'option-narrow',

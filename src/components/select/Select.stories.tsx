@@ -12,10 +12,10 @@ type Story = StoryObj<typeof Select>;
 
 const SelectWithState = () => {
 	const options = [
-		{ title: '1 опция', value: '1 опция', className: '' },
-		{ title: '2 опция', value: '2 опция', className: '' },
-		{ title: '3 опция', value: '3 опция', className: '' },
-		{ title: '4 опция', value: '4 опция', className: '' },
+		{ title: '1 option', value: '1 option', className: '' },
+		{ title: '2 option', value: '2 option', className: '' },
+		{ title: '3 option', value: '3 option', className: '' },
+		{ title: '4 option', value: '4 option', className: '' },
 	];
 	const [selected, setSelected] = useState(options[0]);
 
@@ -25,7 +25,7 @@ const SelectWithState = () => {
 				selected={selected}
 				onChange={setSelected}
 				options={options}
-				title='Название радиогруппы'
+				title='Radio group name'
 			/>
 		</>
 	);

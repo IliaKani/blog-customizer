@@ -5,26 +5,26 @@ import { FontFamiliesClasses } from 'src/constants/articleProps';
 import styles from './index.module.scss';
 
 type TextProps = {
-	/** Сам текст для вывода */
-	children: ReactNode;
-	/** Тэг которым отрендерить текст */
-	as?: ElementType;
-	/** Булевая пропса, должен ли текст меняться в зависимости от конфига */
-	dynamic?: boolean;
-	/** Размер шрифта */
-	size?: 12 | 18 | 22 | 25 | 31 | 45;
-	/** Вес шрифта */
-	weight?: 400 | 800;
-	/** Стиль шрифта */
-	fontStyle?: 'italic' | 'normal';
-	/** Булевая пропса, отвечающая должен ли текст быть в верхнем регистре */
-	uppercase?: boolean;
-	/** Выравнивание текста */
-	align?: 'center' | 'left';
-	/** font-family текста */
-	family?: FontFamiliesClasses;
-	/** Булевая пропса, делает динамическим только семью шрифтов и цвет */
-	dynamicLite?: boolean;
+    /** The text to be displayed */
+    children: ReactNode;
+    /** The tag to render the text with */
+    as?: ElementType;
+    /** Boolean prop, should the text change depending on the config */
+    dynamic?: boolean;
+    /** Font size */
+    size?: 12 | 18 | 22 | 25 | 31 | 45;
+    /** Font weight */
+    weight?: 400 | 800;
+    /** Font style */
+    fontStyle?: 'italic' | 'normal';
+    /** Boolean prop, should the text be in uppercase */
+    uppercase?: boolean;
+    /** Text alignment */
+    align?: 'center' | 'left';
+    /** Text font-family */
+    family?: FontFamiliesClasses;
+    /** Boolean prop, makes only the font family and color dynamic */
+    dynamicLite?: boolean;
 };
 
 export const Text = ({

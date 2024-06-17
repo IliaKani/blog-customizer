@@ -50,47 +50,47 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 						as = {'h3'}
 						align = 'center'
 					>
-						Задайте параметры
+						Set options
 					</Text>
 					<Select 
 						selected = {props.sideBarState.fontFamilyOption}
 						options = {fontFamilyOptions}
 						onChange = {props.fontFamily}
-						title = 'Шрифт'/>
+						title = 'Font'/>
 					<RadioGroup 
 						name = 'fontSize' 
 						options = {fontSizeOptions} 
 						selected = {props.sideBarState.fontSizeOption}
 						onChange = {props.fontSize}
-						title = 'Размер шрифта'
+						title = 'Font size'
 					/>
 					<Select 
 						selected = {props.sideBarState.fontColor}
 						options = {fontColors}
 						onChange = {props.fontColor}
-						title = 'Цвет шрифта'
+						title = 'Font color'
 					/>
 					<Separator/>
 					<Select 
 						selected = {props.sideBarState.backgroundColor}
 						options = {backgroundColors}
 						onChange = {props.backgroundColor}
-						title = 'Цвет фона'						
+						title = 'Backgorund color'						
 					/>
 					<Select 
 						selected = {props.sideBarState.contentWidth}
 						options = {contentWidthArr}
 						onChange = {props.contentWidth}
-						title = 'Ширина контента'						
+						title = 'Content width'						
 					/>
 					<div className={clsx(styles.bottomContainer)}>
 						<Button 
-							title='Сбросить' 
+							title='Reset' 
 							type='reset' 
 							onClick = {props.resetButton} 
 						/>
 						<Button 
-							title='Применить' 
+							title='Submit' 
 							type='submit' 
 						/>
 					</div>

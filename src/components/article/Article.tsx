@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-// Сообщаем вебпаку, что этот файл использует это изображение.
+// We tell webpack that this file uses this image.
 import plane from 'src/images/plane.png';
 import { Text } from 'components/text';
 
@@ -10,40 +10,39 @@ export const Article = () => {
 	return (
 		<article className={clsx(styles.article)}>
 			<Text as='h1' size={45} weight={800} uppercase dynamicLite>
-				Портрет Западной Швейцарии
+				Portrait of Western Switzerland
 			</Text>
 			<div className={styles.titleDescription}>
 				<Text size={22} weight={800} uppercase align='center' dynamicLite>
-					Примитивист Фиштр расписывает новый бюджетный авиалайнер
+					Primitivist Fishtr paints a new budget airliner
 				</Text>
 			</div>
 			<img className={styles.image} src={plane} alt='Картинка самолета' />
 			<Text dynamic size={18} fontStyle='italic'>
-				Фото: Hans-Peter Gauster , &quot;Bombardier CSeries CS300 HB-JCA&quot; ©
+				Photo: Hans-Peter Gauster , &quot;Bombardier CSeries CS300 HB-JCA&quot; ©
 				2017 CC BY-SA 2.0
 			</Text>
 			<Text dynamic size={18}>
-				В конце 2016 года швейцарская авиакомпания Swiss получила свой первый
-				канадский «Бомбардье CS300» для полётов малой и средней дальности. Чтобы
-				придать новой 145-местной машине неповторимую индивидуальность, ливрею
-				заказали живописцу. При условии, что эскиз он выполнит в одиночку и
-				лично поправит роспись, когда её будут наносить на фюзеляж.
+				At the end of 2016, the Swiss airline Swiss received its first
+				Canadian Bombardier CS300 for short and medium range flights. To
+				give the new 145-seater a unique personality, livery
+				commissioned a painter. Provided that he completes the sketch alone and
+				he will personally correct the painting when it is applied to the fuselage.
 			</Text>
 			<Text dynamic size={18}>
-				Выбор пал на примитивиста Матиаса Форбаша, работающего под псевдонимом
-				Фиштр. Ему поставили задачу изобразить всё лучшее во франкоговорящей
-				части Швейцарии — горы, озёра, вина, сыры, доброжелательность и свободу.
-				Заказ был выполнен в рекордный срок, всего за 5 месяцев. Самолёт
-				получился похожим на самого художника: такой же добродушный и с улыбкой
-				до ушей.
+				The choice fell on the primitivist Matthias Forbash, working under the pseudonym
+				Fishtr. He was given the task of portraying the best in the French-speaking
+				parts of Switzerland - mountains, lakes, wines, cheeses, friendliness and freedom.
+				The order was completed in record time, in just 5 months. Airplane
+				turned out to look like the artist himself: just as good-natured and with a smile
+				to the ears.
 			</Text>
 			<Text dynamic size={18}>
-				С мая 2017 года &quot;Бомбардье&quot; носит имя &quot;Швейцарская
-				Романдия&quot; и регистрационный номер HB-JCA ; совершает в среднем 4
-				коммерческих полёта в сутки. Его можно видеть в &quot;Домодедово&quot;,
-				а также в аэропортах Парижа, Валенсии, Кракова, Берлина, Вены, Загреба,
-				на на Майорке, Крите и Сицилии. Самолёт останется в той же ливрее, пока
-				его купит другая авиакомпания.
+				Since May 2017, &quot;Bombardier&quot; bears the name &quot;Swiss
+				Romandie&quot;  and registration number HB-JCA; makes an average of 4
+				commercial flights per day. You can see it at the airports of Paris, Valencia, Krakow, Berlin, Vienna, Zagreb,
+				on Mallorca, Crete and Sicily. The aircraft will remain in the same livery until
+				another airline will buy it.
 			</Text>
 		</article>
 	);

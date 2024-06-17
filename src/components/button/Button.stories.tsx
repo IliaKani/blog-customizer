@@ -14,14 +14,14 @@ export const ButtonStory: Story = {
 		return (
 			<>
 				<Button
-					title='Сбросить'
+					title='Reset'
 					type='reset'
-					onClick={() => alert('клик на кнопку сбросить')}
+					onClick={() => alert('click on the reset button')}
 				/>
 				<Button
-					title='Применить'
+					title='Submit'
 					type='submit'
-					onClick={() => alert('клик на кнопку применить')}
+					onClick={() => alert('click on the apply button')}
 				/>
 			</>
 		);

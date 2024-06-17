@@ -62,7 +62,7 @@ export const Select = (props: SelectProps) => {
 				data-testid='selectWrapper'>
 				<img
 					src={arrowDown}
-					alt='иконка стрелочки'
+					alt='arrow icon'
 					className={clsx(styles.arrow, { [styles.arrow_open]: isOpen })}
 				/>
 				<div

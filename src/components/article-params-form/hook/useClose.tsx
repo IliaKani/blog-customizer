@@ -5,18 +5,18 @@ type TUseClose = {
   onClose: () => void;
   rootRef: React.RefObject<HTMLElement>;
 };
-// кастомные хуки всегда должны начинаться с глагола `use`, чтобы реакт понял, что это хук. Он следит за их вызовами
+
 export function useClose({isOpen, onClose, rootRef}: TUseClose) {
   useEffect(() => {
-    if (!isOpen) return; // останавливаем действие эффекта, если закрыто
+    if (!isOpen) return; // stop the effect if closed
 
    
     function handleClickOutside(event: MouseEvent) {
       const { target } = event;
       const isOutsideClick =
-        target instanceof Node && // проверяем, что это `DOM`-элемент
+        target instanceof Node && // check that this is a `DOM` element
         rootRef.current &&
-        !rootRef.current.contains(target);  // проверяем, что кликнули на элемент, который находится не внутри нашего блока
+        !rootRef.current.contains(target);  // we check that they clicked on an element that is not inside our block
       if (isOutsideClick) {
         onClose();
       }
@@ -31,11 +31,11 @@ export function useClose({isOpen, onClose, rootRef}: TUseClose) {
     document.addEventListener("keydown", handleEscape);
     document.addEventListener("mousedown", handleClickOutside);
 
-    //  обязательно удаляем обработчики в `clean-up`- функции
+    //  be sure to remove handlers in the `clean-up` function
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-    // обязательно следим за `isOpen`, чтобы срабатывало только при открытии, а не при любой перерисовке компонента
+    // be sure to monitor `isOpen` so that it only works when opening, and not during any redrawing of the component
   }, [isOpen, onClose, rootRef]);
 }
