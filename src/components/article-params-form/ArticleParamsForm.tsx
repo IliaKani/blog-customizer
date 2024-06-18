@@ -13,89 +13,97 @@ import { Text } from '../text/Text';
 import { useClose } from './hook/useClose';
 
 type ArticleParamsFormProps = {
-	fontFamily: (select: OptionType) => void,
-	fontSize: (select: OptionType) => void,
-	fontColor: (select: OptionType) => void,
-	backgroundColor: (select: OptionType) => void,
-	contentWidth: (select: OptionType) => void,
-	resetButton: () => void,
-	applyButton: (event: FormEvent) => void,
-	sideBarState: ArticleStateType,
+    fontFamily: (select: OptionType) => void,
+    fontSize: (select: OptionType) => void,
+    fontColor: (select: OptionType) => void,
+    backgroundColor: (select: OptionType) => void,
+    contentWidth: (select: OptionType) => void,
+    resetButton: () => void,
+    applyButton: (event: FormEvent) => void,
+    sideBarState: ArticleStateType,
 }
 
-export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
-	const ref = useRef<HTMLFormElement | null>(null)
-	const [open, setOpen] = useState(false);
-	// const elem = ref.current;
+export const ArticleParamsForm = ({
+    fontFamily,
+    fontSize,
+    fontColor,
+    backgroundColor,
+    contentWidth,
+    resetButton,
+    applyButton,
+    sideBarState
+}: ArticleParamsFormProps) => {
+    const ref = useRef<HTMLFormElement | null>(null)
+    const [open, setOpen] = useState(false);
 
-	useClose({
-		isOpen: open,
-		onClose: () => setOpen(false),
-		rootRef: ref
-	})
+    useClose({
+        isOpen: open,
+        onClose: () => setOpen(false),
+        rootRef: ref
+    })
 
-	const toggleForm = useCallback(() => {
-		open === false ? setOpen(true) : setOpen(false);
-	},[open])
+    const toggleForm = useCallback(() => {
+        setOpen(prevOpen => !prevOpen);
+    },[])
 
-	return (
-		<>
-			<ArrowButton onClick={toggleForm} isOpen={open}/>
-			<aside className = {clsx(styles.container, {[styles.container_open] : open})}>
-				<form className = {styles.form} ref = {ref} onSubmit = {props.applyButton}>
-					<Text 
-						size = {31} 
-						weight = {800} 
-						uppercase 
-						as = {'h3'}
-						align = 'center'
-					>
-						Set options
-					</Text>
-					<Select 
-						selected = {props.sideBarState.fontFamilyOption}
-						options = {fontFamilyOptions}
-						onChange = {props.fontFamily}
-						title = 'Font'/>
-					<RadioGroup 
-						name = 'fontSize' 
-						options = {fontSizeOptions} 
-						selected = {props.sideBarState.fontSizeOption}
-						onChange = {props.fontSize}
-						title = 'Font size'
-					/>
-					<Select 
-						selected = {props.sideBarState.fontColor}
-						options = {fontColors}
-						onChange = {props.fontColor}
-						title = 'Font color'
-					/>
-					<Separator/>
-					<Select 
-						selected = {props.sideBarState.backgroundColor}
-						options = {backgroundColors}
-						onChange = {props.backgroundColor}
-						title = 'Backgorund color'						
-					/>
-					<Select 
-						selected = {props.sideBarState.contentWidth}
-						options = {contentWidthArr}
-						onChange = {props.contentWidth}
-						title = 'Content width'						
-					/>
-					<div className={clsx(styles.bottomContainer)}>
-						<Button 
-							title='Reset' 
-							type='reset' 
-							onClick = {props.resetButton} 
-						/>
-						<Button 
-							title='Submit' 
-							type='submit' 
-						/>
-					</div>
-				</form>
-			</aside>
-		</>
-	);
+    return (
+        <>
+            <ArrowButton onClick={toggleForm} isOpen={open}/>
+            <aside className = {clsx(styles.container, {[styles.container_open] : open})}>
+                <form className = {styles.form} ref = {ref} onSubmit = {applyButton}>
+                    <Text 
+                        size = {31} 
+                        weight = {800} 
+                        uppercase 
+                        as = {'h3'}
+                        align = 'center'
+                    >
+                        Set options
+                    </Text>
+                    <Select 
+                        selected = {sideBarState.fontFamilyOption}
+                        options = {fontFamilyOptions}
+                        onChange = {fontFamily}
+                        title = 'Font'/>
+                    <RadioGroup 
+                        name = 'fontSize' 
+                        options = {fontSizeOptions} 
+                        selected = {sideBarState.fontSizeOption}
+                        onChange = {fontSize}
+                        title = 'Font size'
+                    />
+                    <Select 
+                        selected = {sideBarState.fontColor}
+                        options = {fontColors}
+                        onChange = {fontColor}
+                        title = 'Font color'
+                    />
+                    <Separator/>
+                    <Select 
+                        selected = {sideBarState.backgroundColor}
+                        options = {backgroundColors}
+                        onChange = {backgroundColor}
+                        title = 'Backgorund color'						
+                    />
+                    <Select 
+                        selected = {sideBarState.contentWidth}
+                        options = {contentWidthArr}
+                        onChange = {contentWidth}
+                        title = 'Content width'						
+                    />
+                    <div className={clsx(styles.bottomContainer)}>
+                        <Button 
+                            title='Reset' 
+                            type='reset' 
+                            onClick = {resetButton} 
+                        />
+                        <Button 
+                            title='Submit' 
+                            type='submit' 
+                        />
+                    </div>
+                </form>
+            </aside>
+        </>
+    );
 };
